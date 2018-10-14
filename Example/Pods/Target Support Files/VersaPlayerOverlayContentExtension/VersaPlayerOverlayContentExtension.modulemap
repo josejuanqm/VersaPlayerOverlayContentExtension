@@ -1,0 +1,6 @@
+framework module VersaPlayerOverlayContentExtension {
+  umbrella header "VersaPlayerOverlayContentExtension-umbrella.h"
+
+  export *
+  module * { export * }
+}
