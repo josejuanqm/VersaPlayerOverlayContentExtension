@@ -1,6 +1,6 @@
 {
   "name": "VersaPlayerOverlayContentExtension",
-  "version": "0.1.0",
+  "version": "0.1.4",
   "summary": "VersaPlayer extension to enable overlay content.",
   "description": "VersaPlayer extension to enable overlay content functionality.",
   "homepage": "https://github.com/josejuanqm/VersaPlayerOverlayContentExtension",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/josejuanqm/VersaPlayerOverlayContentExtension.git",
-    "tag": "0.1.0"
+    "tag": "0.1.4"
   },
   "social_media_url": "https://twitter.com/josejuanqm",
   "platforms": {
@@ -24,5 +24,6 @@
     "VersaPlayer": [
 
     ]
-  }
+  },
+  "swift_version": "4"
 }
