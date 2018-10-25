@@ -15,7 +15,7 @@ open class VersaPlayerOverlayContent: UIView {
     public var shown: Bool = false
     public var shouldPausePlayerOnShow: Bool = true
     
-    override public func didMoveToSuperview() {
+    override open func didMoveToSuperview() {
         super.didMoveToSuperview()
         if superview != nil {
             player.overlayContentManager?.delegate?.positionIn(container: superview!, forContent: self)
