@@ -5,6 +5,14 @@
 [![License](https://img.shields.io/cocoapods/l/VersaPlayerOverlayContentExtension.svg?style=flat)](https://cocoapods.org/pods/VersaPlayerOverlayContentExtension)
 [![Platform](https://img.shields.io/cocoapods/p/VersaPlayerOverlayContentExtension.svg?style=flat)](https://cocoapods.org/pods/VersaPlayerOverlayContentExtension)
 
+## Usage
+
+<div>
+  <p align="center">
+    <img src="https://github.com/josejuanqm/VersaPlayerOverlayContentExtension/blob/master/sample.png" />
+  </p>
+</div>
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
