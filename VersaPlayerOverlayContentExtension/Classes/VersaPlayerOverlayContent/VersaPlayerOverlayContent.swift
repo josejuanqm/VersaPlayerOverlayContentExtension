@@ -24,19 +24,21 @@ open class VersaPlayerOverlayContent: UIView {
     
     public func show(with status: VersaPlayerOverlayContentManagerPlayerStatus) {
         if shown { return } else { shown = true }
-        if shouldPausePlayerOnShow { player.pause() }
+        if shouldPausePlayerOnShow && player.isPlaying { player.pause() }
         player.overlayContentManager?.delegate?.willDisplayOverlayContentIn(player: player, content: self, status: status)
         player.controls?.behaviour.hide()
         player.showOverlay(content: self)
     }
     
     public func hide(with status: VersaPlayerOverlayContentManagerPlayerStatus) {
+        player.overlayContentManager?.isShowing = false
         player.overlayContentManager?.delegate?.willRemoveOverlayContentIn(player: player, content: self, status: status)
         player.controls?.behaviour.show()
         player.hideOverlay(content: self)
     }
     
     @IBAction public func hide() {
+        player.overlayContentManager?.isShowing = false
         player.overlayContentManager?.delegate?.willRemoveOverlayContentIn(player: player, content: self, status: player.overlayContentManager?.status ?? .none)
         player.controls?.behaviour.show()
         player.hideOverlay(content: self)

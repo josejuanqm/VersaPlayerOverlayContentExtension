@@ -16,6 +16,7 @@ open class VersaPlayerOverlayContentManager: VersaPlayerExtension {
 
     public var delegate: VersaPlayerOverlayContentManagerDelegate? = nil
     public var status: VersaPlayerOverlayContentManagerPlayerStatus? = nil
+    internal var isShowing: Bool = false
     
     public init(with player: VersaPlayer, and delegate: VersaPlayerOverlayContentManagerDelegate) {
         super.init(with: player)
@@ -48,10 +49,14 @@ open class VersaPlayerOverlayContentManager: VersaPlayerExtension {
     }
     
     public func showIfNeededWith(status: VersaPlayerOverlayContentManagerPlayerStatus) {
+        if isShowing {
+            return
+        }
         if (delegate?.shouldShowOverlayContentForPlayer(player: player, status: status) ?? false) {
             if let view = delegate?.viewForOverlayContentIn(player: player, status: status) {
                 view.player = player
                 delegate?.willDisplayOverlayContentIn(player: player, content: view, status: status)
+                isShowing = true
                 view.show(with: status)
             }
         }
