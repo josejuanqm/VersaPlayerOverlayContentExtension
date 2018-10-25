@@ -9,7 +9,7 @@
 import UIKit
 import VersaPlayer
 
-public class VersaPlayerOverlayContent: UIView {
+open class VersaPlayerOverlayContent: UIView {
 
     public var player: VersaPlayer!
     public var shown: Bool = false
