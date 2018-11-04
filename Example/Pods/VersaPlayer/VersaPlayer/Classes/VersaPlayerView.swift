@@ -1,6 +1,6 @@
 //
-//  VersaPlayer.swift
-//  VersaPlayer Demo
+//  VersaPlayerView.swift
+//  VersaPlayerView Demo
 //
 //  Created by Jose Quintero on 10/11/18.
 //  Copyright © 2018 Quasar. All rights reserved.
@@ -11,19 +11,25 @@ import CoreMedia
 import AVFoundation
 import AVKit
 
-open class VersaPlayer: UIView, AVPictureInPictureControllerDelegate {
+open class VersaPlayerView: UIView, AVPictureInPictureControllerDelegate {
 
     /// VersaPlayer extension dictionary
     public var extensions: [String: VersaPlayerExtension] = [:]
     
     /// AVPlayer used in VersaPlayer implementation
-    public var player: VPlayer!
+    public var player: VersaPlayer!
+    
+    /// VersaPlayerControls instance being used to display controls
+    public var controls: VersaPlayerControls? = nil
     
     /// VPlayerRenderingView instance
-    public var renderingView: VPlayerRenderingView!
+    public var renderingView: VersaPlayerRenderingView!
     
     /// VersaPlayerPlaybackDelegate instance
     public var playbackDelegate: VersaPlayerPlaybackDelegate? = nil
+    
+    /// VersaPlayerDecryptionDelegate instance to be used only when a VPlayer item with isEncrypted = true is passed
+    public var decryptionDelegate: VersaPlayerDecryptionDelegate? = nil
     
     /// VersaPlayer initial container
     private var nonFullscreenContainer: UIView!
@@ -74,7 +80,7 @@ open class VersaPlayer: UIView, AVPictureInPictureControllerDelegate {
     /// - Parameters:
     ///     - ext: The instance of the extension.
     ///     - name: The name of the extension.
-    public func addExtension(extension ext: VersaPlayerExtension, with name: String) {
+    open func addExtension(extension ext: VersaPlayerExtension, with name: String) {
         ext.player = self
         ext.prepare()
         extensions[name] = ext
@@ -84,17 +90,17 @@ open class VersaPlayer: UIView, AVPictureInPictureControllerDelegate {
     ///
     /// - Parameters:
     ///     - name: The name of the extension.
-    public func getExtension(with name: String) -> VersaPlayerExtension? {
+    open func getExtension(with name: String) -> VersaPlayerExtension? {
         return extensions[name]
     }
     
     /// Prepares the player to play
-    public func prepare() {
+    open func prepare() {
         ready = true
-        player = VPlayer()
+        player = VersaPlayer()
         player.handler = self
         player.preparePlayerPlaybackDelegate()
-        renderingView = VPlayerRenderingView(with: self)
+        renderingView = VersaPlayerRenderingView(with: self)
         layout(view: renderingView, into: self)
     }
     
@@ -103,7 +109,7 @@ open class VersaPlayer: UIView, AVPictureInPictureControllerDelegate {
     /// - Parameters:
     ///     - view: The view to layout.
     ///     - into: The container view.
-    public func layout(view: UIView, into: UIView) {
+    open func layout(view: UIView, into: UIView) {
         into.addSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.topAnchor.constraint(equalTo: into.topAnchor).isActive = true
@@ -116,7 +122,7 @@ open class VersaPlayer: UIView, AVPictureInPictureControllerDelegate {
     ///
     /// - Parameters:
     ///     - enabled: Whether or not to enable
-    public func setNativePip(enabled: Bool) {
+    open func setNativePip(enabled: Bool) {
         if enabled {
             pipController?.startPictureInPicture()
         }else {
@@ -128,22 +134,19 @@ open class VersaPlayer: UIView, AVPictureInPictureControllerDelegate {
     ///
     /// - Parameters:
     ///     - enabled: Whether or not to enable
-    public func setFullscreen(enabled: Bool) {
+    open func setFullscreen(enabled: Bool) {
+        if enabled == isFullscreenModeEnabled {
+            return
+        }
         if enabled {
             if let window = UIApplication.shared.keyWindow {
                 nonFullscreenContainer = superview
                 removeFromSuperview()
                 layout(view: self, into: window)
-                let value = UIInterfaceOrientation.landscapeLeft.rawValue
-                UIDevice.current.setValue(value, forKey: "orientation")
-                UIViewController.attemptRotationToDeviceOrientation()
             }
         }else {
             removeFromSuperview()
             layout(view: self, into: nonFullscreenContainer)
-            let value = UIInterfaceOrientation.portrait.rawValue
-            UIDevice.current.setValue(value, forKey: "orientation")
-            UIViewController.attemptRotationToDeviceOrientation()
         }
         
         isFullscreenModeEnabled = enabled
@@ -153,7 +156,7 @@ open class VersaPlayer: UIView, AVPictureInPictureControllerDelegate {
     ///
     /// - Parameters:
     ///     - item: The VPlayerItem instance to add to player.
-    public func set(item: VPlayerItem?) {
+    open func set(item: VersaPlayerItem?) {
         if !ready {
             prepare()
         }
@@ -164,22 +167,48 @@ open class VersaPlayer: UIView, AVPictureInPictureControllerDelegate {
         }
     }
     
+    /// VersaPlayerControls instance to display controls in player, using VersaPlayerGestureRecieverView instance
+    /// to handle gestures
+    ///
+    /// - Parameters:
+    ///     - controls: VersaPlayerControls instance used to display controls
+    ///     - gestureReciever: Optional gesture reciever view to be used to recieve gestures
+    public func use(controls: VersaPlayerControls, with gestureReciever: VersaPlayerGestureRecieverView? = nil) {
+        let coordinator = VersaPlayerControlsCoordinator()
+        coordinator.player = self
+        coordinator.controls = controls
+        coordinator.gestureReciever = gestureReciever
+        controls.controlsCoordinator = coordinator
+        addSubview(coordinator)
+        bringSubview(toFront: controls)
+        
+        self.controls = controls
+    }
+    
+    /// Update controls to specified time
+    ///
+    /// - Parameters:
+    ///     - time: Time to be updated to
+    public func updateControls(toTime time: CMTime) {
+        controls?.timeDidChange(toTime: time)
+    }
+    
     /// Play
-    @IBAction public func play() {
-        if playbackDelegate?.playbackShouldBegin(forPlayer: player) ?? true {
+    @IBAction open func play() {
+        if playbackDelegate?.playbackShouldBegin(player: player) ?? true {
             player.play()
             isPlaying = true
         }
     }
     
     /// Pause
-    @IBAction public func pause() {
+    @IBAction open func pause() {
         player.pause()
         isPlaying = false
     }
     
     /// Toggle Playback
-    @IBAction public func togglePlayback() {
+    @IBAction open func togglePlayback() {
         if isPlaying {
             pause()
         }else {
@@ -187,20 +216,20 @@ open class VersaPlayer: UIView, AVPictureInPictureControllerDelegate {
         }
     }
     
-    public func pictureInPictureControllerDidStopPictureInPicture(_ pictureInPictureController: AVPictureInPictureController) {
+    open func pictureInPictureControllerDidStopPictureInPicture(_ pictureInPictureController: AVPictureInPictureController) {
         //hide fallback
     }
     
-    public func pictureInPictureControllerDidStartPictureInPicture(_ pictureInPictureController: AVPictureInPictureController) {
+    open func pictureInPictureControllerDidStartPictureInPicture(_ pictureInPictureController: AVPictureInPictureController) {
         //show fallback
     }
     
-    public func pictureInPictureControllerWillStopPictureInPicture(_ pictureInPictureController: AVPictureInPictureController) {
+    open func pictureInPictureControllerWillStopPictureInPicture(_ pictureInPictureController: AVPictureInPictureController) {
         isPipModeEnabled = false
         controls?.controlsCoordinator.isHidden = false
     }
     
-    public func pictureInPictureControllerWillStartPictureInPicture(_ pictureInPictureController: AVPictureInPictureController) {
+    open func pictureInPictureControllerWillStartPictureInPicture(_ pictureInPictureController: AVPictureInPictureController) {
         controls?.controlsCoordinator.isHidden = true
         isPipModeEnabled = true
     }

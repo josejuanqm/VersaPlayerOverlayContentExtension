@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'VersaPlayerOverlayContentExtension'
-  s.version          = '0.1.6'
+  s.version          = '0.2.0'
   s.summary          = 'VersaPlayer extension to enable overlay content.'
   s.description      = 'VersaPlayer extension to enable overlay content functionality.'
   s.homepage         = 'https://github.com/josejuanqm/VersaPlayerOverlayContentExtension'

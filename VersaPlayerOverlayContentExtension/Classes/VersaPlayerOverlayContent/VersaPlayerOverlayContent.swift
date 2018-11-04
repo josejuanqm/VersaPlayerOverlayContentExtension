@@ -11,7 +11,7 @@ import VersaPlayer
 
 open class VersaPlayerOverlayContent: UIView {
 
-    public var player: VersaPlayer!
+    public var player: VersaPlayerView!
     public var shown: Bool = false
     public var shouldPausePlayerOnShow: Bool = true
     

@@ -4,8 +4,8 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
-  - VersaPlayer (0.1.1)
-  - VersaPlayerOverlayContentExtension (0.1.4):
+  - VersaPlayer (1.2.1)
+  - VersaPlayerOverlayContentExtension (0.1.6):
     - VersaPlayer
 
 DEPENDENCIES:
@@ -24,9 +24,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  VersaPlayer: 92f5eab6d9ce0a12bcfc5eca4618446f03931ec8
-  VersaPlayerOverlayContentExtension: d3cca8a799cf58369d4ac4637276a67a090f01b4
+  VersaPlayer: ae33859d21559ff631b0dfb159f212af70631ef2
+  VersaPlayerOverlayContentExtension: ddddd5e0da8aea0ba1b48511019b6122dbac8dea
 
-PODFILE CHECKSUM: 26320abea2adf3d2ed79e3e641641149244c0896
+PODFILE CHECKSUM: 7373f52ff6adc7369a4d55b4c114f3805aafefb7
 
 COCOAPODS: 1.5.3

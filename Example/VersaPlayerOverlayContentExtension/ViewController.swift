@@ -12,14 +12,14 @@ import VersaPlayerOverlayContentExtension
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var player: VersaPlayer!
+    @IBOutlet weak var player: VersaPlayerView!
     @IBOutlet weak var pauseOverlay: VersaPlayerOverlayContent!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         player.useOverlayContent(manager: VersaPlayerOverlayContentManager.init(with: player, and: self))
         if let url = URL.init(string: "http://rmcdn.2mdn.net/Demo/html5/output.mp4") {
-            let item = VPlayerItem(url: url)
+            let item = VersaPlayerItem(url: url)
             player.set(item: item)
         }
     }
@@ -36,7 +36,7 @@ extension ViewController: VersaPlayerOverlayContentManagerDelegate {
         content.bottomAnchor.constraint(equalTo: container.bottomAnchor).isActive = true
     }
     
-    func shouldShowOverlayContentForPlayer(player: VersaPlayer, status: VersaPlayerOverlayContentManagerPlayerStatus) -> Bool {
+    func shouldShowOverlayContentForPlayer(player: VersaPlayerView, status: VersaPlayerOverlayContentManagerPlayerStatus) -> Bool {
         switch status {
         case .assetLoaded:
             return true
@@ -51,16 +51,16 @@ extension ViewController: VersaPlayerOverlayContentManagerDelegate {
         }
     }
     
-    func viewForOverlayContentIn(player: VersaPlayer, status: VersaPlayerOverlayContentManagerPlayerStatus) -> VersaPlayerOverlayContent {
+    func viewForOverlayContentIn(player: VersaPlayerView, status: VersaPlayerOverlayContentManagerPlayerStatus) -> VersaPlayerOverlayContent {
         pauseOverlay.shouldPausePlayerOnShow = true
         return pauseOverlay
     }
     
-    func willDisplayOverlayContentIn(player: VersaPlayer, content: VersaPlayerOverlayContent, status: VersaPlayerOverlayContentManagerPlayerStatus) {
+    func willDisplayOverlayContentIn(player: VersaPlayerView, content: VersaPlayerOverlayContent, status: VersaPlayerOverlayContentManagerPlayerStatus) {
         
     }
     
-    func willRemoveOverlayContentIn(player: VersaPlayer, content: VersaPlayerOverlayContent, status: VersaPlayerOverlayContentManagerPlayerStatus) {
+    func willRemoveOverlayContentIn(player: VersaPlayerView, content: VersaPlayerOverlayContent, status: VersaPlayerOverlayContentManagerPlayerStatus) {
         player.play()
     }
     

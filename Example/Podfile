@@ -3,10 +3,6 @@ use_frameworks!
 target 'VersaPlayerOverlayContentExtension_Example' do
   pod 'VersaPlayerOverlayContentExtension', :path => '../'
 
-  target 'VersaPlayerOverlayContentExtension_Tests' do
-    inherit! :search_paths
-
-    pod 'VersaPlayer'
-    pod 'FBSnapshotTestCase' , '~> 2.1.4'
-  end
+  pod 'VersaPlayer'
+  pod 'FBSnapshotTestCase' , '~> 2.1.4'
 end

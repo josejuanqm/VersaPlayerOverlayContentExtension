@@ -12,13 +12,11 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		CDBBEBBB3284BA03C1AF1F36 /* Pods_VersaPlayerOverlayContentExtension_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 422C3B66293A75759E15CB2C /* Pods_VersaPlayerOverlayContentExtension_Example.framework */; };
+		AF579BC80FE04C7BA0483B09 /* Pods_VersaPlayerOverlayContentExtension_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8AD8344BF34E94201CFCAB8 /* Pods_VersaPlayerOverlayContentExtension_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		19BE7522841DB1F31244CEDB /* Pods-VersaPlayerOverlayContentExtension_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VersaPlayerOverlayContentExtension_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VersaPlayerOverlayContentExtension_Tests/Pods-VersaPlayerOverlayContentExtension_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		3B3EA70D344F87BE2B6F7342 /* VersaPlayerOverlayContentExtension.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = VersaPlayerOverlayContentExtension.podspec; path = ../VersaPlayerOverlayContentExtension.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		422C3B66293A75759E15CB2C /* Pods_VersaPlayerOverlayContentExtension_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VersaPlayerOverlayContentExtension_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* VersaPlayerOverlayContentExtension_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VersaPlayerOverlayContentExtension_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -26,12 +24,11 @@
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		8AB68C5D5DC86028B26EE610 /* Pods-VersaPlayerOverlayContentExtension_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VersaPlayerOverlayContentExtension_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VersaPlayerOverlayContentExtension_Tests/Pods-VersaPlayerOverlayContentExtension_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		8DF3ADA7A282FBE752C02BA3 /* Pods-VersaPlayerOverlayContentExtension_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VersaPlayerOverlayContentExtension_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-VersaPlayerOverlayContentExtension_Example/Pods-VersaPlayerOverlayContentExtension_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A47852AA004508EC7061BF9F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		CBC7206BE453D3298C595B8E /* Pods_VersaPlayerOverlayContentExtension_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VersaPlayerOverlayContentExtension_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D54DE5A68FCD4E2CC17A5AF5 /* Pods-VersaPlayerOverlayContentExtension_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VersaPlayerOverlayContentExtension_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VersaPlayerOverlayContentExtension_Example/Pods-VersaPlayerOverlayContentExtension_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		A78291A316916BFCD146B57E /* Pods-VersaPlayerOverlayContentExtension_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VersaPlayerOverlayContentExtension_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VersaPlayerOverlayContentExtension_Example/Pods-VersaPlayerOverlayContentExtension_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		C8AD8344BF34E94201CFCAB8 /* Pods_VersaPlayerOverlayContentExtension_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VersaPlayerOverlayContentExtension_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E81456EB946137D4E22D9878 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		FC67324BDD318674F712789A /* Pods-VersaPlayerOverlayContentExtension_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VersaPlayerOverlayContentExtension_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-VersaPlayerOverlayContentExtension_Example/Pods-VersaPlayerOverlayContentExtension_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,41 +36,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDBBEBBB3284BA03C1AF1F36 /* Pods_VersaPlayerOverlayContentExtension_Example.framework in Frameworks */,
+				AF579BC80FE04C7BA0483B09 /* Pods_VersaPlayerOverlayContentExtension_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		18BB4E7223638CB36E042CA5 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				D54DE5A68FCD4E2CC17A5AF5 /* Pods-VersaPlayerOverlayContentExtension_Example.debug.xcconfig */,
-				FC67324BDD318674F712789A /* Pods-VersaPlayerOverlayContentExtension_Example.release.xcconfig */,
-				19BE7522841DB1F31244CEDB /* Pods-VersaPlayerOverlayContentExtension_Tests.debug.xcconfig */,
-				8AB68C5D5DC86028B26EE610 /* Pods-VersaPlayerOverlayContentExtension_Tests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		418B1EAF417DFF9C011FD6F9 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				422C3B66293A75759E15CB2C /* Pods_VersaPlayerOverlayContentExtension_Example.framework */,
-				CBC7206BE453D3298C595B8E /* Pods_VersaPlayerOverlayContentExtension_Tests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for VersaPlayerOverlayContentExtension */,
 				607FACD11AFB9204008FA782 /* Products */,
-				18BB4E7223638CB36E042CA5 /* Pods */,
-				418B1EAF417DFF9C011FD6F9 /* Frameworks */,
+				AB9BE6C9C6CDAB1AC7982BB5 /* Pods */,
+				873570A6E894640F9971E155 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +94,23 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		873570A6E894640F9971E155 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C8AD8344BF34E94201CFCAB8 /* Pods_VersaPlayerOverlayContentExtension_Example.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AB9BE6C9C6CDAB1AC7982BB5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A78291A316916BFCD146B57E /* Pods-VersaPlayerOverlayContentExtension_Example.debug.xcconfig */,
+				8DF3ADA7A282FBE752C02BA3 /* Pods-VersaPlayerOverlayContentExtension_Example.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -124,11 +118,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "VersaPlayerOverlayContentExtension_Example" */;
 			buildPhases = (
-				B4833FEAB1898CDA522A7AF5 /* [CP] Check Pods Manifest.lock */,
+				8EF19E4A669871A5C1CF906F /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				027689DE2F87B89C090B497A /* [CP] Embed Pods Frameworks */,
+				0D2C85268D21D00E38E1D8A7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -187,18 +181,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		027689DE2F87B89C090B497A /* [CP] Embed Pods Frameworks */ = {
+		0D2C85268D21D00E38E1D8A7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-VersaPlayerOverlayContentExtension_Example/Pods-VersaPlayerOverlayContentExtension_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FBSnapshotTestCase/FBSnapshotTestCase.framework",
 				"${BUILT_PRODUCTS_DIR}/VersaPlayer/VersaPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/VersaPlayerOverlayContentExtension/VersaPlayerOverlayContentExtension.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSnapshotTestCase.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VersaPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VersaPlayerOverlayContentExtension.framework",
 			);
@@ -207,16 +207,20 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VersaPlayerOverlayContentExtension_Example/Pods-VersaPlayerOverlayContentExtension_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B4833FEAB1898CDA522A7AF5 /* [CP] Check Pods Manifest.lock */ = {
+		8EF19E4A669871A5C1CF906F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-VersaPlayerOverlayContentExtension_Example-checkManifestLockResult.txt",
 			);
@@ -360,7 +364,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D54DE5A68FCD4E2CC17A5AF5 /* Pods-VersaPlayerOverlayContentExtension_Example.debug.xcconfig */;
+			baseConfigurationReference = A78291A316916BFCD146B57E /* Pods-VersaPlayerOverlayContentExtension_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = VersaPlayerOverlayContentExtension/Info.plist;
@@ -375,7 +379,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FC67324BDD318674F712789A /* Pods-VersaPlayerOverlayContentExtension_Example.release.xcconfig */;
+			baseConfigurationReference = 8DF3ADA7A282FBE752C02BA3 /* Pods-VersaPlayerOverlayContentExtension_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = VersaPlayerOverlayContentExtension/Info.plist;

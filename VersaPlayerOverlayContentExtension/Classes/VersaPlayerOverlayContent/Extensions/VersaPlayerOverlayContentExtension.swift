@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import VersaPlayer
 
-public extension VersaPlayer {
+public extension VersaPlayerView {
     
     public var overlayContentManager: VersaPlayerOverlayContentManager? {
         let overlayContentManager = getExtension(with: "overlayContentManager") as? VersaPlayerOverlayContentManager

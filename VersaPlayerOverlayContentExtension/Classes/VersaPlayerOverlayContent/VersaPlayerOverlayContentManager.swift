@@ -18,31 +18,31 @@ open class VersaPlayerOverlayContentManager: VersaPlayerExtension {
     public var status: VersaPlayerOverlayContentManagerPlayerStatus? = nil
     internal var isShowing: Bool = false
     
-    public init(with player: VersaPlayer, and delegate: VersaPlayerOverlayContentManagerDelegate) {
+    public init(with player: VersaPlayerView, and delegate: VersaPlayerOverlayContentManagerDelegate) {
         super.init(with: player)
         self.delegate = delegate
     }
     
     open override func prepare() {
-        NotificationCenter.default.addObserver(forName: VPlayer.VPlayerNotificationName.assetLoaded.notification, object: nil, queue: OperationQueue.main) { (notification) in
+        NotificationCenter.default.addObserver(forName: VersaPlayer.VPlayerNotificationName.assetLoaded.notification, object: nil, queue: OperationQueue.main) { (notification) in
             self.status = VersaPlayerOverlayContentManagerPlayerStatus.assetLoaded
             self.showIfNeededWith(status: self.status!)
         }
-        NotificationCenter.default.addObserver(forName: VPlayer.VPlayerNotificationName.timeChanged.notification, object: nil, queue: OperationQueue.main) { (notification) in
-            if let time = notification.userInfo?[VPlayer.VPlayerNotificationInfoKey.time.rawValue] as? CMTime {
+        NotificationCenter.default.addObserver(forName: VersaPlayer.VPlayerNotificationName.timeChanged.notification, object: nil, queue: OperationQueue.main) { (notification) in
+            if let time = notification.userInfo?[VersaPlayer.VPlayerNotificationInfoKey.time.rawValue] as? CMTime {
                 self.status = VersaPlayerOverlayContentManagerPlayerStatus.timeChanged(round(time.seconds))
                 self.showIfNeededWith(status: self.status!)
             }
         }
-        NotificationCenter.default.addObserver(forName: VPlayer.VPlayerNotificationName.didEnd.notification, object: nil, queue: OperationQueue.main) { (notification) in
+        NotificationCenter.default.addObserver(forName: VersaPlayer.VPlayerNotificationName.didEnd.notification, object: nil, queue: OperationQueue.main) { (notification) in
             self.status = VersaPlayerOverlayContentManagerPlayerStatus.didEnd
             self.showIfNeededWith(status: self.status!)
         }
-        NotificationCenter.default.addObserver(forName: VPlayer.VPlayerNotificationName.play.notification, object: nil, queue: OperationQueue.main) { (notification) in
+        NotificationCenter.default.addObserver(forName: VersaPlayer.VPlayerNotificationName.play.notification, object: nil, queue: OperationQueue.main) { (notification) in
             self.status = VersaPlayerOverlayContentManagerPlayerStatus.didPlay
             self.showIfNeededWith(status: self.status!)
         }
-        NotificationCenter.default.addObserver(forName: VPlayer.VPlayerNotificationName.pause.notification, object: nil, queue: OperationQueue.main) { (notification) in
+        NotificationCenter.default.addObserver(forName: VersaPlayer.VPlayerNotificationName.pause.notification, object: nil, queue: OperationQueue.main) { (notification) in
             self.status = VersaPlayerOverlayContentManagerPlayerStatus.didPause
             self.showIfNeededWith(status: self.status!)
         }

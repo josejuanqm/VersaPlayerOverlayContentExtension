@@ -1,6 +1,6 @@
 //
 //  VersaPlayerGestureRecieverViewDelegate.swift
-//  VersaPlayer Demo
+//  VersaPlayerView Demo
 //
 //  Created by Jose Quintero on 10/11/18.
 //  Copyright © 2018 Quasar. All rights reserved.
@@ -20,9 +20,15 @@ public protocol VersaPlayerGestureRecieverViewDelegate {
     /// Tap was recognized
     ///
     /// - Parameters:
-    ///     - scale: CGPoin at wich touch was recognized
+    ///     - point: CGPoint at wich touch was recognized
     func didTap(at point: CGPoint)
     
+    /// Double tap was recognized
+    ///
+    /// - Parameters:
+    ///     - point: CGPoint at wich touch was recognized
+    func didDoubleTap(at point: CGPoint)
+
     /// Pan was recognized
     ///
     /// - Parameters:

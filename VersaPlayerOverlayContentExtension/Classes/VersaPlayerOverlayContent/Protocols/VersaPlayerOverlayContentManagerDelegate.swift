@@ -12,8 +12,8 @@ import VersaPlayer
 
 public protocol VersaPlayerOverlayContentManagerDelegate {
     func positionIn(container: UIView, forContent content: VersaPlayerOverlayContent)
-    func shouldShowOverlayContentForPlayer(player: VersaPlayer, status: VersaPlayerOverlayContentManagerPlayerStatus) -> Bool
-    func viewForOverlayContentIn(player: VersaPlayer, status: VersaPlayerOverlayContentManagerPlayerStatus) -> VersaPlayerOverlayContent 
-    func willDisplayOverlayContentIn(player: VersaPlayer, content: VersaPlayerOverlayContent, status: VersaPlayerOverlayContentManagerPlayerStatus)
-    func willRemoveOverlayContentIn(player: VersaPlayer, content: VersaPlayerOverlayContent, status: VersaPlayerOverlayContentManagerPlayerStatus)
+    func shouldShowOverlayContentForPlayer(player: VersaPlayerView, status: VersaPlayerOverlayContentManagerPlayerStatus) -> Bool
+    func viewForOverlayContentIn(player: VersaPlayerView, status: VersaPlayerOverlayContentManagerPlayerStatus) -> VersaPlayerOverlayContent
+    func willDisplayOverlayContentIn(player: VersaPlayerView, content: VersaPlayerOverlayContent, status: VersaPlayerOverlayContentManagerPlayerStatus)
+    func willRemoveOverlayContentIn(player: VersaPlayerView, content: VersaPlayerOverlayContent, status: VersaPlayerOverlayContentManagerPlayerStatus)
 }
